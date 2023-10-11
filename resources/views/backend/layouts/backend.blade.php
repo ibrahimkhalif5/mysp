@@ -102,8 +102,8 @@
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="command"></i><span>Opportunities</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="/opportunities">Add New</a></li>
-                                <li><a class="nav-link" href="/view-opportunities">View Opportunities</a></li>
+                                <li><a class="nav-link" href="/admin/opportunities">Add New</a></li>
+                                <li><a class="nav-link" href="/admin/opportunities/view">View Opportunities</a></li>
 
                             </ul>
                         </li>
