@@ -1,4 +1,4 @@
-@extends('backend.layouts.backend')
+@extends('backend.layouts.user')
 @section('content')
 
 <!-- Main Content -->
@@ -24,14 +24,14 @@
                                         <label>Fullname</label>
                                         <div class="form-group">
                                             <input type="text" class="form-control" name="name" id="name"
-                                                placeholder="Your fullname" value="{{Auth::user()->name}}">
+                                                placeholder="Your fullname" value="{{Auth::user()->name}}" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <label>Email Address</label>
                                         <div class="form-group">
                                             <input type="email" class="form-control" name="email" id="email"
-                                                placeholder="Your Email" value="{{Auth::user()->email}}">
+                                                placeholder="Your Email" value="{{Auth::user()->email}}" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -41,14 +41,15 @@
                                         <label>ID Number</label>
                                         <div class="form-group">
                                             <input type="number" class="form-control" name="idno" id="idno"
-                                                placeholder="Your ID Number" value="{{$Registration->idno}}">
+                                                placeholder="Your ID Number" value="{{$Registration->idno}}" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <label>Phone Number</label>
                                         <div class="form-group">
                                             <input type="number" class="form-control" name="phone" id="phone"
-                                                placeholder="Your Phone Number" value="{{$Registration->phone}}">
+                                                placeholder="Your Phone Number" value="{{$Registration->mobile}}"
+                                                required>
                                         </div>
                                     </div>
                                 </div>
@@ -58,7 +59,7 @@
                                         <label>Gender</label>
                                         <div class="form-group">
 
-                                            <select class="form-control" id="gender" name="gender">
+                                            <select class="form-control" id="gender" name="gender" required>
                                                 <option selected="select">Select....</option>
                                                 <option value="male">Male</option>
                                                 <option value="female">Female</option>
@@ -69,20 +70,17 @@
                                         <label>Passport</label>
                                         <div class="form-group">
 
-                                            <select class="form-control" id="passport" name="passport">
-                                                <option value="yes"
-                                                    {{ $Registration->passport === 'yes' ? 'selected' : '' }}>YES
-                                                </option>
-                                                <option value="no"
-                                                    {{ $Registration->passport === 'no' ? 'selected' : '' }}>NO
-                                                </option>
+                                            <select class="form-control" id="passport" name="passport" required>
+                                                <option selected="select">Select....</option>
+                                                <option value="yes">Yes</option>
+                                                <option value="no">No</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>Passport Number</label>
+
                                         <div class="form-group">
                                             <input type="number" class="form-control" name="passportno" id="passportno"
                                                 placeholder="Your Passport Number"
@@ -90,10 +88,11 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>Passport Expery Date</label>
+
                                         <div class="form-group">
                                             <input type="number" class="form-control" name="passdate" id="passdate"
-                                                placeholder="Expery Date" value="{{$Registration->passport_date}}">
+                                                placeholder="Passport Expery Date"
+                                                value="{{$Registration->passport_date}}">
                                         </div>
                                     </div>
                                 </div>
@@ -102,14 +101,15 @@
                                         <label>Your Data of Birth</label>
                                         <div class="form-group">
                                             <input type="date" class="form-control" name="dob" id="dob"
-                                                placeholder="Your  dob" value="{{$Registration->dob}}">
+                                                placeholder="Your  dob" value="{{$Registration->dob}}" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <label>Parent Name</label>
                                         <div class="form-group">
-                                            <input type="number" class="form-control" name="parentname" id="parentname"
-                                                placeholder="Your Parent Name" value="{{$Registration->parent_name}}">
+                                            <input type="text" class="form-control" name="parentname" id="parentname"
+                                                placeholder="Your Parent Name" value="{{$Registration->parent_name}}"
+                                                pattern="[A-Za-z]+" required>
                                         </div>
                                     </div>
                                 </div>
@@ -120,13 +120,13 @@
                                         <div class="form-group">
                                             <input type="number" class="form-control" name="pphone" id="pphone"
                                                 placeholder="Your Parent Phone Number"
-                                                value="{{$Registration->parent_no}}">
+                                                value="{{$Registration->parent_no}}" pattern="[0-9]{10}" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <label>Disability?</label>
                                         <div class="form-group">
-                                            <select class="form-control" id="pwd" name="pwd">
+                                            <select class="form-control" id="pwd" name="pwd" required>
                                                 <option selected="select">Select....</option>
                                                 <option value="yes">Yes</option>
                                                 <option value="no">No</option>
@@ -140,7 +140,7 @@
                                         <label>Subcounty</label>
                                         <div class="form-group">
 
-                                            <select class="form-control" id="subcounty" name="subcounty">
+                                            <select class="form-control" id="subcounty" name="subcounty" required>
                                                 <option selected="select">Select Subcounty....</option>
                                                 <option value="mandera">Mandera East</option>
                                                 <option value="rhamu">Rhamu</option>
@@ -155,7 +155,7 @@
                                         <label>Ward</label>
                                         <div class="form-group">
 
-                                            <select class="form-control" id="ward" name="ward">
+                                            <select class="form-control" id="ward" name="ward" required>
                                                 <option selected>Select Ward ...</option>
                                             </select>
                                         </div>
@@ -168,7 +168,7 @@
                                         <label>Highest Education Level</label>
                                         <div class="form-group">
 
-                                            <select class="form-control" id="education" name="education">
+                                            <select class="form-control" id="education" name="education" required>
                                                 <option selected="select">Highest Education Level....</option>
                                                 <option value="postgraduate">Masters Degree</option>
                                                 <option value="undergraduate">Bachelors Degree</option>
@@ -185,7 +185,8 @@
                                         <div class="form-group">
 
                                             <input type="text" class="form-control" name="grade" id="grade"
-                                                placeholder="Enter Your grade" value="{{$Registration->grade}}">
+                                                placeholder="Enter Your grade" value="{{$Registration->grade}}"
+                                                required>
                                         </div>
                                     </div>
                                 </div>
@@ -197,7 +198,7 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control" name="qualification"
                                                 id="qualification" placeholder="Enter Your Field of Study"
-                                                value="{{$Registration->qualification}}">
+                                                value="{{$Registration->qualification}}" required>
 
                                         </div>
                                     </div>
@@ -250,7 +251,7 @@
                                     <div class="col-md-6">
                                         <label>Are You Intrested in? </label>
                                         <div class="form-group">
-                                            <select class="form-control" id="career" name="career">
+                                            <select class="form-control" id="career" name="career" required>
                                                 <option selected>Select Opportunities ...</option>
                                                 <option value="none">None</option>
                                                 <option value="training">Training & Capacity Building</option>
@@ -264,7 +265,7 @@
                                     <div class="col-md-6">
                                         <label>Skills Training </label>
                                         <div class="form-group">
-                                            <select class="form-control" id="skills" name="skills">
+                                            <select class="form-control" id="skills" name="skills" required>
                                                 <option selected>Select Skills Training ...</option>
                                                 <option value="none">None</option>
                                                 <option value="training">Training & Capacity Building</option>

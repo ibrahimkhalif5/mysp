@@ -23,7 +23,7 @@
                                             <label>Opportunity type</label>
                                             <select class="form-control" id="type" name="type">
                                                 <option selected="select">Select....</option>
-                                                <option value="training">Training</option>
+                                                <option value="training">Training & Capacity Building</option>
                                                 <option value="intern">Internship</option>
                                             </select>
                                         </div>

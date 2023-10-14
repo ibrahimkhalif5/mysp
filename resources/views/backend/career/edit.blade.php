@@ -6,65 +6,84 @@
     <section class="section">
         <div class="section-body">
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-6">
+                <div class="col-12 col-md-12 col-lg-12">
                     <div class="card">
                         <div class="card-header">
                             <h4>Update opportunity Info </h4>
                         </div>
                         <div class="card-body">
 
-                            <form class="" method="POST" action="/career/update/{{$Career->id}}"
+                            <form class="" method="POST" action="/admin/opportunities/update/{{$Career->id}}"
                                 enctype="multipart/form-data">
                                 @csrf
 
                                 {{method_field('PUT')}}
-                                <div class="form-group">
-                                    <label>Opportunity type</label>
-                                    <select class="form-control" id="role" name="type">
-                                        <option value="jobs" {{ $Career->type === 'jobs' ? 'selected' : '' }}>Jobs
-                                        </option>
-                                        <option value="training" {{ $Career->type === 'training' ? 'selected' : '' }}>
-                                            training
-                                        </option>
-                                        <option value="intern" {{ $Career->type === 'intern' ? 'selected' : '' }}>Intern
-                                        </option>
 
-                                    </select>
-                                </div>
-                                <div class="form-group">
+                                <div class="row">
 
-                                    <input type="text" class="form-control" value="{{$Career->title}}" name="title"
-                                        id="title" placeholder="Enter Title example Training,Careers or Intern">
-                                </div>
-                                <div class="form-group vacancy-field">
-                                    <input type="text" class="form-control" value="{{$Career->vacancy}}" name="vacancy"
-                                        placeholder="Enter Vacancy Number">
-                                </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Opportunity type</label>
+                                            <select class="form-control" id="role" name="type">
+                                                <option selected="select">Select....</option>
+                                                <option value="training">Training & Capacity Building</option>
+                                                <option value="intern">Internship</option>
 
-                                <div class="form-group venue-field">
-                                    <input type="text" class="form-control" value="{{$Career->venue}}" name="venue"
-                                        placeholder="Enter Training Venue">
-                                </div>
+                                            </select>
+                                        </div>
+                                    </div>
 
-                                <div class="form-group">
-
-                                    <textarea class="form-control" name="description" value="{{$Career->description}}"
-                                        id="description" placeholder="Enter  Description"></textarea>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Delivery Mode</label>
+                                            <select class="form-control" id="tmode" name="tmode">
+                                                <option selected="select">Select....</option>
+                                                <option value="online">Online</option>
+                                                <option value="inperson">In Person</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label>image</label>
-                                    <input type="file" class="form-control" name="image" id="image"
-                                        accept=".png, .jpeg, .jpg, image/*">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <input type="text" class="form-control" value="{{$Career->title}}"
+                                                name="title" id="title" placeholder="Enter title ....">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <textarea class="form-control" name="description"
+                                                value="{{$Career->description}}" id="description"
+                                                placeholder="Enter  Description"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                            <label>Status</label>
+                                            <select class="form-control" id="status" name="status">
+                                                <option value="open">Open</option>
+                                                <option value="close">Closed</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="file" class="form-control" name="image" id="image"
+                                                accept=".png, .jpeg, .jpg, image/*">
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label>Status</label>
-                                    <select class="form-control" id="status" name="status">
-                                        <option value="open">Open</option>
-                                        <option value="close">Close</option>
-                                    </select>
-                                </div>
+
+
+
 
                                 <div class="card-footer text-right">
                                     <button class="btn btn-success btn-block" type="submit">Submit</button>

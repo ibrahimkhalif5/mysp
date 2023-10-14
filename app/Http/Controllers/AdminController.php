@@ -22,20 +22,24 @@ class AdminController extends Controller
 
         $reg = Registration::count();
         
-        $postgraduate = Job::where('education', 'LIKE', 'Postgraduate')->count();
-        $graduate = Job::where('education', 'LIKE', 'Undergraduate')->count();
-        $college = Job::where('education', 'LIKE', 'College')->count();
-        $vocational = Job::where('education', 'LIKE', 'Cocational')->count();
-        $kcse = Job::where('education', 'LIKE', 'Secondary')->count();
+        $master = Registration::where('education', 'LIKE', 'Postgraduate')->count();
+        $degree = Registration::where('education', 'LIKE', 'Undergraduate')->count();
+        $college = Registration::where('education', 'LIKE', 'College')->count();
+        $voc = Registration::where('education', 'LIKE', 'Vocational')->count();
+        $kcse = Registration::where('education', 'LIKE', 'Secondary')->count();
+        $kcpe = Registration::where('education', 'LIKE', 'primary')->count();
+        $madarasa = Registration::where('education', 'LIKE', 'madarasa')->count();
     
         return view('backend.admin', [
             'reg' => $reg,
           
-            'postgraduate' => $postgraduate,
-            'graduate' => $graduate,
+            'master' => $master,
+            'degree' => $degree,
             'college' => $college,
-            'vocational' => $vocational,
-            'kcse' => $kcse
+            'voc' => $voc,
+            'kcse' => $kcse,
+            'kcpe' => $kcpe,
+            'madarasa' => $madarasa
         ]);
     }
     public function userhome(){
@@ -99,6 +103,13 @@ class AdminController extends Controller
             return view('backend.career.applicant')->with('Registration', $reg);
             
         }
+
+        public function checkIdno($idno) {
+            $exists = Registration::where('idno', $idno)->exists();
+            return response()->json(['exists' => $exists]);
+        }
+        
+
 
 
         public function view(){
@@ -168,7 +179,7 @@ class AdminController extends Controller
             return view('backend.reports.primary', compact('reg'));
         }
         public function madarasa(){
-            $reg = Registration::get();
+            $reg = Registration::where('education','madarasa')->get();
             
             return view('backend.reports.madarasa', compact('reg'));
         }
@@ -253,8 +264,7 @@ public function jobupdate(Request $request,$id){
     $users->title = $request->input('title');
     $users->description = $request->input('description');
     $users->status = $request->input('status');
-    $users->venue = $request->input('venue');
-    $users->vacancy = $request->input('vacancy');
+    
     if ($request->hasfile('image')) {
         $avatar = $request->file('image');
         $filename = time().'.'.$avatar->getClientOriginalExtension();
@@ -266,7 +276,7 @@ public function jobupdate(Request $request,$id){
 
     $users->save();
 
-return redirect('/view-opportunities')->with('status', 'User record updated successfully');
+return redirect('/admin/opportunities/view')->with('status', 'User record updated successfully');
 }
 
 public function partneradd(){

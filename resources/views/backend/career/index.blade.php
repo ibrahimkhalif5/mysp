@@ -41,7 +41,8 @@
                                             <td>{{$row->status}}</td>
                                             <td>
 
-                                                <a href="/career/edit/{{$row->id}}" class="btn btn-success">Edit</a>
+                                                <a href="/admin/opportunities/edit/{{$row->id}}"
+                                                    class="btn btn-success">Edit</a>
 
                                             </td>
 

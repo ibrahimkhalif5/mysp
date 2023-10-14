@@ -33,14 +33,17 @@ Auth::routes(['verify' => true]);
 
 // Admin section .only admin and super admin
 Route::group(['middleware' => ['auth', 'verified',AdminMiddleware::class]], function () {
+
+    Route::get('/check-idno/{idno}', [AdminController::class,'checkIdno'])->name('idnumber');
+
     Route::get('/admin/dashboard', [AdminController::class,'index']);
     Route::get('/user/home', [AdminController::class,'userhome']);
 
     Route::get('/admin/opportunities', [AdminController::class,'create']);
     Route::post('/admin/opportunities', [AdminController::class,'store']);
     Route::get('/admin/opportunities/view', [AdminController::class,'view']);
-    Route::get('/career/edit/{id}', [AdminController::class,'jobedit']);
-    Route::put('/career/update/{id}', [AdminController::class,'jobupdate']);
+    Route::get('/admin/opportunities/edit/{id}', [AdminController::class,'jobedit']);
+    Route::put('/admin/opportunities/update/{id}', [AdminController::class,'jobupdate']);
 
     Route::get('/fetch-careers', [AdminController::class,'fetchCareers']);
 
@@ -53,22 +56,19 @@ Route::group(['middleware' => ['auth', 'verified',AdminMiddleware::class]], func
     Route::put('user/application/update/{id}', [AdminController::class,'appupdate']);
    
     
-    Route::get('/gallery', [AdminController::class,'galleryview']);
-    Route::get('/gallery-add', [AdminController::class,'galleryadd']);
-    Route::post('/gallery', [AdminController::class,'gallery']);
+    Route::get('/admin/gallery', [AdminController::class,'galleryview']);
+    Route::get('/admin/gallery/add', [AdminController::class,'galleryadd']);
+    Route::post('/admin/gallery', [AdminController::class,'gallery']);
 
-    Route::get('/partner', [AdminController::class,'partner']);
-    Route::get('/partner/add', [AdminController::class,'partneradd']);
-    Route::post('/partner', [AdminController::class,'partnerstore']);
+    Route::get('/admin/partner', [AdminController::class,'partner']);
+    Route::get('/admin/partner/add', [AdminController::class,'partneradd']);
+    Route::post('/admin/partner', [AdminController::class,'partnerstore']);
     
-    Route::get('/add-users', [AdminController::class,'adduser']);
-    Route::get('/users', [AdminController::class,'viewuser']);
-    Route::post('/users', [AdminController::class,'userstore']);
-    Route::get('/user-role/{id}', [AdminController::class,'userview']);
-    Route::put('/user-update/{id}', [AdminController::class,'usersupdate']);
-
-    Route::get('/profile-view/{id}', [AdminController::class,'profile']);
-    Route::get('/group-view/{id}', [AdminController::class,'groupview']);
+    Route::get('/admin/add/users', [AdminController::class,'adduser']);
+    Route::get('/admin/users', [AdminController::class,'viewuser']);
+    Route::post('/admin/users', [AdminController::class,'userstore']);
+    Route::get('/admin/user/role/{id}', [AdminController::class,'userview']);
+    Route::put('/admin/user/update/{id}', [AdminController::class,'usersupdate']);
     Route::get('/admin/applicant/CV/{id}', [AdminController::class,'cv']);
    
     // Report links

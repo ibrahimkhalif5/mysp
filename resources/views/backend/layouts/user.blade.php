@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Delivery Unit</title>
+    <title>ManderaYSP</title>
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('back/assets/css/app.min.css') }}">
     <!-- Template CSS -->
@@ -266,6 +266,178 @@
 
 
     <!-- career change -->
+    <script>
+    $(document).ready(function() {
+        // Initially, hide the Passport fields
+        $("#passportno").hide();
+        $("#passdate").hide();
+
+        // Show/hide Passport fields based on Passport selection
+        $("#passport").on("change", function() {
+            if ($(this).val() === "yes") {
+                $("#passportno").show();
+                $("#passdate").show();
+            } else {
+                $("#passportno").hide();
+                $("#passdate").hide();
+            }
+        });
+
+
+    });
+    </script>
+    <!-- subcounty -->
+    <script>
+    // Define the subcounty and ward data
+    var data = {
+        "lafey": ["Sala", "Fino", "Lafey", "Waranqara", "Alango Gof"],
+        "elwak": ["Wargadud", "Kutulo", "Elwak South", "Elwak North", "Shimbir Fatuma"],
+        "mandera": ["Arabia", "Libehia", "Khalalio", "Neboi", "Township"],
+        "rhamu": ["Ashabito", "Guticha", "Marothile", "Rhamu", "Rhamu Ditmu"],
+        "takaba": ["Takaba South", "Takaba", "Lagsure", "Dandu", "Gither"],
+        "banisa": ["Banissa", "Derkhale", "Guba", "Malkamari", "Kiliwehiri"]
+    };
+
+    // Function to populate the ward select field based on the selected subcounty
+    function populateWards() {
+        var subcountySelect = document.getElementById("subcounty");
+        var wardSelect = document.getElementById("ward");
+
+        // Clear previous options
+        wardSelect.innerHTML = '<option value="">Select Ward</option>';
+
+        // Get the selected subcounty
+        var selectedSubcounty = subcountySelect.value;
+
+        // Check if a subcounty is selected
+        if (selectedSubcounty) {
+            // Get the wards for the selected subcounty from the data object
+            var wards = data[selectedSubcounty];
+
+            // Populate the ward select field with the corresponding wards
+            wards.forEach(function(ward) {
+                var option = document.createElement("option");
+                option.text = ward;
+                option.value = ward;
+                wardSelect.appendChild(option);
+            });
+        }
+    }
+    </script>
+
+    <!-- work experience  -->
+    <script>
+    const experienceSelect = document.getElementById('experience');
+    const toggleFields = document.querySelectorAll('.toggle-fields');
+
+    experienceSelect.addEventListener('change', function() {
+        const selectedValue = this.value;
+        if (selectedValue === '0') {
+            // Hide the fields when 'None' is selected
+            toggleFields.forEach(field => {
+                field.style.display = 'none';
+            });
+        } else {
+            // Show the fields for other options
+            toggleFields.forEach(field => {
+                field.style.display = 'block';
+            });
+        }
+    });
+    </script>
+
+    <!-- career  -->
+    <script>
+    function toggleSkillsField(select) {
+        var skillsField = document.getElementById("skills");
+
+        if (select.value === "none") {
+            skillsField.style.display = "none";
+        } else {
+            skillsField.style.display = "block";
+        }
+    }
+    </script>
+
+    <!-- text validae -->
+    <script>
+    $(document).ready(function() {
+        $('.validate-text').on('input', function() {
+            var input = $(this).val();
+            if (/[^A-Za-z\s]/.test(input)) {
+                $(this).addClass('is-invalid');
+                $(this).removeClass('is-valid');
+            } else {
+                $(this).removeClass('is-invalid');
+                $(this).addClass('is-valid');
+            }
+        });
+    });
+    </script>
+    <!-- id validate -->
+
+    <script>
+    $(document).ready(function() {
+        $('#idno').on('input', function() {
+            var idNumber = $(this).val();
+            var url = $(this).data('url').replace('PLACEHOLDER_IDNO', idNumber);
+
+            // Check if ID number is valid
+            var errorElement = $('#id-number-error');
+            if (!/^\d{8}$/.test(idNumber)) {
+                errorElement.text('Please enter a valid 8-digit ID number.');
+                $('#submit-button').prop('disabled', true); // Disable submit button
+                return;
+            }
+
+            $.get(url, function(data) {
+                if (data.exists) {
+                    errorElement.text('ID number already exists in the database');
+                    $('#submit-button').prop('disabled', true); // Disable submit button
+                } else {
+                    errorElement.text('');
+                    $('#submit-button').prop('disabled', false); // Enable submit button
+                }
+            });
+        });
+    });
+    </script>
+
+
+
+
+
+
+    <!-- mobile -->
+
+    <script>
+    document.getElementById('phone').addEventListener('input', function() {
+        var phone = this.value;
+        var errorElement = document.getElementById('mobile-number-error');
+
+        if (!/^\d{10}$/.test(phone)) {
+            errorElement.textContent = 'Please enter a valid 10-digit  number.';
+        } else {
+            errorElement.textContent = '';
+        }
+    });
+    </script>
+
+    <!-- parent number -->
+
+    <script>
+    document.getElementById('pphone').addEventListener('input', function() {
+        var pphone = this.value;
+        var errorElement = document.getElementById('pphone-number-error');
+
+        if (!/^\d{10}$/.test(pphone)) {
+            errorElement.textContent = 'Please enter a valid 10-digit  number.';
+        } else {
+            errorElement.textContent = '';
+        }
+    });
+    </script>
+
 
 
 

@@ -92,8 +92,8 @@
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="users"></i><span>Users</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="/add-users">Add User</a></li>
-                                <li><a class="nav-link" href="/users">Registered Users </a></li>
+                                <li><a class="nav-link" href="/admin/add/users">Add User</a></li>
+                                <li><a class="nav-link" href="/admin/users">Registered Users </a></li>
                             </ul>
                         </li>
                         @endcan
@@ -113,8 +113,8 @@
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="briefcase"></i><span>Gallery</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="/gallery-add">Add images</a></li>
-                                <li><a class="nav-link" href="/gallery">View </a></li>
+                                <li><a class="nav-link" href="/admin/gallery/add">Add images</a></li>
+                                <li><a class="nav-link" href="/admin/gallery">View </a></li>
                             </ul>
                         </li>
                         @endcan
@@ -124,19 +124,19 @@
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="briefcase"></i><span>Partner</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="/partner/add">Add Partner</a></li>
-                                <li><a class="nav-link" href="/partner">View </a></li>
+                                <li><a class="nav-link" href="/admin/partner/add">Add Partner</a></li>
+                                <li><a class="nav-link" href="/admin/partner">View </a></li>
                             </ul>
                         </li>
                         @endcan
                         @can('super_admin')
-                        <li class="dropdown active">
+                        <!-- <li class="dropdown active">
                             <a href="/contact-us" class="nav-link">
                                 <i data-feather="mail"></i>
                                 <span>Messages</span>
-                                <span class="badge">(3)</span> <!-- Replace "3" with the actual counter value -->
+                                <span class="badge">(3)</span> 
                             </a>
-                        </li>
+                        </li> -->
                         @endcan
 
                         <!-- <li class="dropdown">
