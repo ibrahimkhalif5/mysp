@@ -39,7 +39,7 @@
                                             <td>{{$row->created_at}}</td>
                                             <td>
 
-                                                <a href="/user-role/{{$row->id}}" class="btn btn-success">Edit</a>
+                                                <a href="/admin/user/role/{{$row->id}}" class="btn btn-success">Edit</a>
 
                                             </td>
 

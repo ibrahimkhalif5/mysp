@@ -13,7 +13,7 @@
                         </div>
                         <div class="card-body">
 
-                            <form class="" method="POST" action="/user-update/{{$User->id}}">
+                            <form class="" method="POST" action="/admin/user/update/{{$User->id}}">
                                 @csrf
 
                                 {{method_field('PUT')}}
@@ -31,7 +31,7 @@
                                     <label>Role</label>
                                     <select class="form-control" id="role" name="role">
                                         <option value="user">User</option>
-                                        <option value="admin">Admin</option>
+                                        <option value="admin">super_admin</option>
 
                                     </select>
                                 </div>

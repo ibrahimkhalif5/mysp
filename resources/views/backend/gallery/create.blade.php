@@ -13,7 +13,7 @@
                         </div>
                         <div class="card-body">
 
-                            <form class="" method="POST" action="{{url('gallery')}}" id="postComment"
+                            <form class="" method="POST" action="{{url('/admin/gallery')}}" id="postComment"
                                 enctype="multipart/form-data">
                                 @csrf
 

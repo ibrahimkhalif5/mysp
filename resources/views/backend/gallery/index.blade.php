@@ -10,7 +10,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h4>Gallery</h4>
-                            <a href="/gallery-add"><button class="btn btn-primary btn-block">Add
+                            <a href="/admin/gallery/add"><button class="btn btn-primary btn-block">Add
                                     image</button></a>
                         </div>
                         <div class="card-body">

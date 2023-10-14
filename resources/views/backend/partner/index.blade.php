@@ -10,7 +10,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h4>Partner</h4>
-                            <a href="/partner/add"><button class="btn btn-primary btn-block">Add
+                            <a href="/admin/partner/add"><button class="btn btn-primary btn-block">Add
                                 </button></a>
                         </div>
                         <div class="card-body">

@@ -17,7 +17,7 @@
                         </div>
                         <div class="card-body">
 
-                            <form class="" method="POST" action="{{url('users')}}">
+                            <form class="" method="POST" action="{{url('/admin/users')}}">
                                 @csrf
 
                                 <div class="form-group">
