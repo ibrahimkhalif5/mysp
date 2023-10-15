@@ -23,8 +23,8 @@
                                         required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input id="image" name="image" class="form-control" type="file">
-
+                                    <input type="file" class="form-control" name="image" id="image"
+                                        accept=".png, .jpeg, .jpg, image/*">
                                 </div>
 
                                 <div class="card-footer text-right">

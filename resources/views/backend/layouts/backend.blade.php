@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <title>ManderaYSP</title>
+    <link rel="stylesheet" href="{{ asset('node_modules/sweetalert2/dist/sweetalert2.min.css') }}">
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('back/assets/css/app.min.css') }}">
     <!-- Template CSS -->
@@ -294,7 +295,7 @@
     <script src="{{ asset('back/assets/js/scripts.js') }}"></script>
     <!-- Custom JS File -->
     <script src="{{ asset('back/assets/js/custom.js') }}"></script>
-
+    <script src="{{ asset('node_modules/sweetalert2/dist/sweetalert2.all.min.js') }}"></script>
     <!-- Page Specific JS File -->
     <script src="{{ asset('back/assets/bundles/datatables/datatables.min.js') }}"></script>
     <script src="{{ asset('back/assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js') }}">
@@ -379,6 +380,9 @@
         });
     });
     </script>
+
+
+
 
 
 

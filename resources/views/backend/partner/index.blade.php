@@ -21,6 +21,7 @@
                                             <th>#</th>
                                             <th>partner</th>
                                             <th>partner logo</th>
+                                            <th>Created date</th>
                                             <th>Action</th>
 
                                         </tr>
@@ -34,12 +35,21 @@
                                             <td><img src="{{asset('uploads/image_files/'.$row->image)}}" width="100px"
                                                     height="100px" alt="image"></td>
 
-
+                                            <td>{{$row->created_at}}</td>
                                             <td>
                                                 <a href="/admin/partner/edit/{{$row->id}}"
                                                     class="btn btn-success">Edit</a>
 
+                                                <a href="/admin/partner/delete/{{$row->id}}"
+                                                    class="btn btn-danger">Delete</a>
+
+
+
+
+
                                             </td>
+
+
 
 
                                         </tr>

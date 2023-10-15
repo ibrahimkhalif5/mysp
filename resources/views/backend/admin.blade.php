@@ -20,7 +20,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
                                     <div class="banner-img">
-                                        <img src="back/assets/img/youth.png" alt="">
+                                        <img src="{{asset('back/assets/img/appl.jpg')}}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
                                     <div class="banner-img">
-                                        <img src="back/assets/img/post.png" alt="">
+                                        <img src="{{asset('back/assets/img/post.png')}}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
                                     <div class="banner-img">
-                                        <img src="back/assets/img/under.png" alt="">
+                                        <img src="{{asset('back/assets/img/under.png')}}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
                                     <div class="banner-img">
-                                        <img src="back/assets/img/college.jpg" alt="">
+                                        <img src="{{asset('back/assets/img/college.jpg')}}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +112,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
                                     <div class="banner-img">
-                                        <img src="back/assets/img/voc.png" alt="">
+                                        <img src="{{asset('back/assets/img/voc.png')}}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -127,14 +127,14 @@
                             <div class="row ">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
                                     <div class="card-content">
-                                        <h5 class="font-15">KCSE </h5>
+                                        <h5 class="font-15">Secondary Certificate </h5>
                                         <h2 class="mb-3 font-18">{{$kcse}}</h2>
 
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
                                     <div class="banner-img">
-                                        <img src="back/assets/img/kcse.png" alt="">
+                                        <img src="{{asset('back/assets/img/kcse.png')}}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -149,14 +149,14 @@
                             <div class="row ">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
                                     <div class="card-content">
-                                        <h5 class="font-15">Primary </h5>
+                                        <h5 class="font-15">Primary Certificate</h5>
                                         <h2 class="mb-3 font-18">{{$kcpe}}</h2>
 
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
                                     <div class="banner-img">
-                                        <img src="back/assets/img/kcse.png" alt="">
+                                        <img src="{{asset('back/assets/img/kcse.png')}}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -171,14 +171,14 @@
                             <div class="row ">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
                                     <div class="card-content">
-                                        <h5 class="font-15">Madarasa </h5>
+                                        <h5 class="font-15">Madarasa Certificate</h5>
                                         <h2 class="mb-3 font-18">{{$madarasa}}</h2>
 
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
                                     <div class="banner-img">
-                                        <img src="back/assets/img/kcse.png" alt="">
+                                        <img src="{{asset('back/assets/img/mad.jpg')}}" alt="">
                                     </div>
                                 </div>
                             </div>

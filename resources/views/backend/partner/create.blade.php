@@ -22,7 +22,8 @@
                                         class="form-control" type="text" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input id="image" name="image" class="form-control" type="file">
+                                    <input id="image" name="image" class="form-control" type="file"
+                                        accept=".png, .jpeg, .jpg, image/*">
 
                                 </div>
 

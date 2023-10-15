@@ -43,6 +43,8 @@
 
                                                 <a href="/admin/gallery/edit/{{$row->id}}"
                                                     class="btn btn-success">Edit</a>
+                                                <a href="/admin/gallery/delete/{{$row->id}}"
+                                                    class="btn btn-danger">Delete</a>
 
                                             </td>
 

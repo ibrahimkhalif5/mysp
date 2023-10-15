@@ -340,6 +340,36 @@ public function partneredit(Request $request,$id)
 
     return view('backend.partner.edit')->with('Partner', $gal);
 }
+public function partnerDelete(Request $request, $id)
+{
+    $partner = Partner::findOrFail($id);
+
+    // Check if the partner exists
+    if ($partner) {
+        // Delete the partner
+        $partner->delete();
+        return redirect('/admin/partner')->with('success', 'Partner deleted successfully.');
+    } else {
+        return redirect('/admin/partner')->with('error', 'Partner not found.');
+    }
+}
+
+
+public function galleryDelete(Request $request, $id)
+{
+    $gal = Gallery::find($id);
+
+    if (!$gal) {
+        return redirect('/admin/gallery')->with('error', 'Partner not found.');
+    }
+
+    $gal->delete();
+
+    return redirect('/admin/gallery')->with('success', 'Partner deleted successfully.');
+}
+
+
+
 
 public function partnerupdate(Request $request,$id){
 
