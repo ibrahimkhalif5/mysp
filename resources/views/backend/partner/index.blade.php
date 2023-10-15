@@ -36,8 +36,8 @@
 
 
                                             <td>
-
-                                                <a href="" class="btn btn-success">Edit</a>
+                                                <a href="/admin/partner/edit/{{$row->id}}"
+                                                    class="btn btn-success">Edit</a>
 
                                             </td>
 

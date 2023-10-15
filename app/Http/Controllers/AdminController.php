@@ -140,7 +140,7 @@ class AdminController extends Controller
     
             $users->save();
 
-        return redirect('/users')->with('status', 'record added successfully');
+        return redirect('/admin/users')->with('status', 'record added successfully');
         }
 
         public function youthregistration(){
@@ -220,7 +220,7 @@ class AdminController extends Controller
     
             $users->save();
 
-        return redirect('/users')->with('status', 'User record updated successfully');
+        return redirect('/admin/users')->with('status', 'User record updated successfully');
         }
 
 
@@ -240,9 +240,36 @@ class AdminController extends Controller
             $gal->save();
             $request->session()->flash('success', 'Data submitted successfully.');
         
-        return redirect('/gallery');
+        return redirect('/admin/gallery');
         }
-        public function __construct()
+
+        public function galleryedit(Request $request,$id)
+        {
+            $gal = Gallery::findOrFail($id);
+            // dd($property);
+    
+            return view('backend.gallery.edit')->with('Gallery', $gal);
+        }
+    public function galleryupdate(Request $request,$id){
+
+            $gal = Gallery::find($id);
+            $gal->title = $request->input('title');
+            $gal->description = $request->input('description');
+            if ($request->hasfile('image')) {
+                $avatar = $request->file('image');
+                $filename = time().'.'.$avatar->getClientOriginalExtension();
+                Image::make($avatar)->save(public_path('uploads/image_files/'.$filename));
+                $avatar->move('public/uploads/image_files/', $filename);
+                $gal->image = $filename;
+            }
+            $gal->save();
+            $request->session()->flash('success', 'Data updated successfully.');
+        
+        return redirect('/admin/gallery');  
+    }
+
+
+    public function __construct()
         {
             $this->middleware('auth');
         }
@@ -304,8 +331,35 @@ public function partnerstore(Request $request) {
     $gal->save();
     $request->session()->flash('success', 'Data submitted successfully.');
 
-return redirect('/partner');
+return redirect('/admin/partner');
 }
+public function partneredit(Request $request,$id)
+{
+    $gal = Partner::findOrFail($id);
+    // dd($property);
+
+    return view('backend.partner.edit')->with('Partner', $gal);
+}
+
+public function partnerupdate(Request $request,$id){
+
+    $gal = Partner::find($id);
+    $gal->partner = $request->input('partner');
+    if ($request->hasfile('image')) {
+        $avatar = $request->file('image');
+        $filename = time().'.'.$avatar->getClientOriginalExtension();
+        Image::make($avatar)->resize(300,300)->save(public_path('uploads/image_files/'.$filename));
+        $avatar->move('public/uploads/image_files/', $filename);
+        $gal->image = $filename;
+    }
+    $gal->save();
+    $request->session()->flash('success', 'Data submitted successfully.');
+
+return redirect('/admin/partner')->with('status', ' record updated successfully');
+}
+
+
+
 
 public function application(){
     // $applications = Application::orderBy('created_at','desc')->paginate(15);

@@ -57,12 +57,19 @@ Route::group(['middleware' => ['auth', 'verified',AdminMiddleware::class]], func
    
     
     Route::get('/admin/gallery', [AdminController::class,'galleryview']);
-    Route::get('/admin/gallery/add', [AdminController::class,'galleryadd']);
     Route::post('/admin/gallery', [AdminController::class,'gallery']);
+    Route::get('/admin/gallery/add', [AdminController::class,'galleryadd']);
+    Route::get('/admin/gallery/edit/{id}', [AdminController::class,'galleryedit']);
+    Route::put('/admin/gallery/update/{id}', [AdminController::class,'galleryupdate']);
+  
+
+
 
     Route::get('/admin/partner', [AdminController::class,'partner']);
     Route::get('/admin/partner/add', [AdminController::class,'partneradd']);
     Route::post('/admin/partner', [AdminController::class,'partnerstore']);
+    Route::get('/admin/partner/edit/{id}', [AdminController::class,'partneredit']);
+    Route::put('/admin/partner/update/{id}', [AdminController::class,'partnerupdate']);
     
     Route::get('/admin/add/users', [AdminController::class,'adduser']);
     Route::get('/admin/users', [AdminController::class,'viewuser']);

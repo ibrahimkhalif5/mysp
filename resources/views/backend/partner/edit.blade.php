@@ -9,17 +9,18 @@
                 <div class="col-12 col-md-6 col-lg-6">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Add partner</h4>
+                            <h4>Update Partner </h4>
                         </div>
                         <div class="card-body">
 
-                            <form class="" method="POST" action="{{url('/admin/partner')}}" id="postComment"
-                                enctype="multipart/form-data">
+                            <form class="" method="POST" action="/admin/partner/update/{{$Partner->id}}">
                                 @csrf
+                                {{method_field('PUT')}}
 
                                 <div class="form-group">
-                                    <input id="partner" name="partner" placeholder="Enter  partner name"
-                                        class="form-control" type="text" required="required">
+                                    <input id="partner" name="partner" value="{{$Partner->partner}}"
+                                        placeholder="Enter  partner name" class="form-control" type="text"
+                                        required="required">
                                 </div>
                                 <div class="form-group">
                                     <input id="image" name="image" class="form-control" type="file">
@@ -30,6 +31,8 @@
                                     <button class="btn btn-primary mr-1" type="submit">Submit</button>
 
                                 </div>
+
+
                             </form>
 
                         </div>
