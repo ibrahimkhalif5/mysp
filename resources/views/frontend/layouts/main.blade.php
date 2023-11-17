@@ -121,7 +121,7 @@
             <!-- <img src="{{asset('front/images/lo.png')}}" alt="" width="100" height="100"> -->
 
             <div class="col-md-8  heading-section heading-section-black ftco-animate">
-                <h2 class="mb-4"><span>Mandera</span>YSP</h2>
+                <h2 class="mb-4"><span>Inua </span><span>Youth</span>Mandera</h2>
 
             </div>
 

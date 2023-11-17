@@ -30,7 +30,7 @@
                                     <label>Role</label>
                                     <select class="form-control" id="role" name="role">
                                         <option value="user">User</option>
-                                        <option value="admin">super_admin</option>
+                                        <option value="super_admin">super_admin</option>
 
                                     </select>
                                 </div>
