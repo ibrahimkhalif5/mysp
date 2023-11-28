@@ -93,7 +93,7 @@
 
             <!-- Second Section -->
             <div class="modal-header bg-danger text-white">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Disclaimer</h1>
+                <h1 class="modal-title fs-5 text-white" id="staticBackdropLabel">Disclaimer</h1>
             </div>
             <div class="modal-body">
                 <h4>Important Notice</h4>
@@ -102,19 +102,107 @@
                     data here is entirely voluntary and contributes to our efforts to understand the needs and
                     aspirations of our youth.
                 </p>
+                <input type="checkbox" id="acceptCheckbox"> I agree to the terms and conditions
+
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a href="/login"><button type="button" class="btn btn-primary">Understood</button></a>
-            </div>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+       <a href="/login"><button type="button" class="btn btn-primary" id="proceedButton">Understood</button></a> 
+        <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">View Terms and Conditions</a>
+    </div>
         </div>
     </div>
 </div>
+
+<!-- Terms and Conditions Modal -->
+<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <!-- Use 'modal-dialog-scrollable' for a scrollable modal -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="termsModalLabel"><strong>Mandera Youth Support Program Terms and Conditions</strong></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Introduction -->
+                <p> We are committed to protecting the privacy and data security of all individuals participating in this program. The privacy notice outlines how we collect, use, and protect your personal information in accordance with the Kenya Data Protection Act 2019 and its subsequent regulations.</p>
+                
+                <!-- Collection of Personal Data -->
+                <p><strong>2. Collection of Personal Data</strong></p>
+                <p>We collect the following categories of data:</p>
+                <ul>
+                        <li>Contact Information:</li>
+                        <ul>
+                            <li>Name</li>
+                            <li>Legal Identification</li>
+                            <li>Email Address</li>
+                            <li>Phone Number</li>
+                            <li>Parent Details</li>
+                        </ul>
+                        <li>Profession Information:</li>
+                        <ul>
+                            <li>Education History</li>
+                            <li>Employment History</li>
+                        </ul>
+                    </ul>
+                
+                <!-- Purpose of Data Collection -->
+                <p><strong>3. Purpose of Data Collection</strong></p>
+                <p>Our primary mission is to collect valuable data that aids in informed decision-making for the benefit of our community. Your decision to register your data here is entirely voluntary and contributes to our efforts to understand the needs and aspirations of our youth.</p>
+
+                <!-- Data Sharing -->
+                <p><strong>4. Data Sharing</strong></p>
+                <p>We may share your data with third parties to look for opportunities for you.</p>
+
+                <!-- Your Rights -->
+                <p><strong>5. Your Rights</strong></p>
+                <p>Under the Kenya Data Protection Act 2019, you have the following rights:</p>
+                <ul>
+                    <li>The right to access to your personal data</li>
+                    <li>The right to rectify inaccurate or incomplete data</li>
+                    <li>The right to request the erasure of your data</li>
+                    <li>The right to object to processing of your data</li>
+                    <li>The right to restrict processing of your data</li>
+                    <li>The right to data portability</li>
+                    <!-- Add more rights as needed -->
+                </ul>
+
+                <!-- Changes to Privacy Notice -->
+                <p><strong>6. Changes to Privacy Notice</strong></p>
+                <p>This privacy notice may be updated from time to time to reflect changes in our practices or legal requirements. By registering on this website, you acknowledge and consent to the processing of your personal data as described in this privacy notice.</p>
+
+                <!-- Acceptance Checkbox -->
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="acceptterm">
+                    <label class="form-check-label" for="acceptCheckbox">I confirm the above information is true and correct to the best of my understanding.</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="/login"><button type="button" class="btn btn-primary" id="proceedB">Understood</button></a>
+                 </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 <style>
 .hidden-button {
     display: none;
 }
+#youth .modal-dialog {
+    margin-top: 10%;
+    }
 </style>
 
 
@@ -245,8 +333,6 @@
                 </a>
             </div>
             @endforeach
-
-
 
         </div>
     </div>

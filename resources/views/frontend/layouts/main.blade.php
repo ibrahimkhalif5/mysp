@@ -136,7 +136,9 @@
                     <li class="nav-item"><a href="/gallery/view" class="nav-link">Gallery</a></li>
 
                     <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
-                    <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+                    <li class="nav-item">
+                    <a href="/login" class="nav-link" id="loginLink">Login</a>
+                   </li>
                 </ul>
             </div>
         </div>
@@ -185,9 +187,51 @@
 </body>
 
 </html>
+
+<!-- Your existing JavaScript code -->
 <script>
-// Add this script to trigger the modal on page load
-$(document).ready(function() {
-    $('#youth').modal('show');
-});
+    $(document).ready(function() {
+        $('#youth').modal('show');
+        $('#termsModal').modal('hide');
+        $('#proceedButton').hide();
+        $('#acceptCheckbox').change(function() {
+            if ($(this).prop('checked')) {
+                $('#proceedButton').show();
+            } else {
+                $('#proceedButton').hide();
+            }
+        });
+    });
+
+    function proceedToLogin() {
+        // Your proceed to login function
+    }
+</script>
+
+<script>
+    $(document).ready(function() {
+        
+        $('#proceedB').hide();
+        $('#acceptterm').change(function() {
+            if ($(this).prop('checked')) {
+                $('#proceedB').show();
+            } else {
+                $('#proceedB').hide();
+            }
+        });
+    });
+
+    function proceedToLogin() {
+        // Your proceed to login function
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#loginLink').on('click', function (e) {
+            e.preventDefault(); // Prevent the default link behavior
+            // Trigger the modal with ID 'termsModal'
+            $('#termsModal').modal('show');
+        });
+    });
 </script>
